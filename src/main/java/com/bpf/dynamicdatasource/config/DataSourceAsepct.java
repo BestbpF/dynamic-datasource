@@ -1,7 +1,6 @@
 package com.bpf.dynamicdatasource.config;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
@@ -37,11 +36,6 @@ public class DataSourceAsepct {
 
     @After("pointCut()")
     public void after() {
-        DataSourceHolder.clearDataSource();
-    }
-
-    @AfterReturning("pointCut()")
-    public void afterReturning() {
         DataSourceHolder.clearDataSource();
     }
 }

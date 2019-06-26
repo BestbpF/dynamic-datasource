@@ -6,7 +6,6 @@ import com.bpf.dynamicdatasource.dao.Test1Mapper;
 import com.bpf.dynamicdatasource.dao.Test2Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -33,7 +32,7 @@ public class TestService {
     /**
      * 如果切面不加@Order，添加Transactional注解会导致切换数据源失效
      */
-    @Transactional(propagation = Propagation.NEVER)
+    @Transactional
     @DataSource(DataSourceEnum.TEST2)
     public void insert() {
         test2Mapper.insert();
