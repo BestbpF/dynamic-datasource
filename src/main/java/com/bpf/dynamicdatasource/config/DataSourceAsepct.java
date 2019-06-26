@@ -39,9 +39,4 @@ public class DataSourceAsepct {
     public void after() {
         DataSourceHolder.clearDataSource();
     }
-
-    @AfterReturning("pointCut()")
-    public void afterReturning() {
-        DataSourceHolder.clearDataSource();
-    }
 }
