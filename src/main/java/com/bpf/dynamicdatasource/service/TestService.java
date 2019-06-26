@@ -33,7 +33,7 @@ public class TestService {
     /**
      * 如果切面不加@Order，添加Transactional注解会导致切换数据源失效
      */
-    @Transactional(propagation = Propagation.NEVER)
+    @Transactional
     @DataSource(DataSourceEnum.TEST2)
     public void insert() {
         test2Mapper.insert();
